@@ -1,1 +1,16 @@
 # simple-text-analyzer
+
+### 1. Load a file containing the text or document you want to analyze.
+### 2. As you load the file line by line, keep a count of how many lines
+there were (one of your statistics taken care of ).
+### 3. Put the text into a string and measure its length to get your
+character count.
+### 4. Temporarily remove all whitespace and measure the length of the
+resulting string to get the character count excluding spaces.
+### 5. Split out all the whitespace to find out how many words there are.
+### 6. Split on full stops to find out how many sentences there are.
+### 7. Split on double newlines to find out how many paragraphs there
+are.
+### 8. Perform calculations to work out the averages.
+Create a new, blank Ruby source file and save it as analyzer.rb in your Ruby folder.
+As you work through the next few sections, you’ll be able to fill it out.
