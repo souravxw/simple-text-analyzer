@@ -17,6 +17,14 @@ sentences_per_paragraph = sentence_count / paragraph_count
 words_per_sentence = word_count / sentence_count
 
 
+sentences = text.gsub(/\s+/,' ').strip.split(/\.|\?|!/)
+sentences_sorted = sentences.sort_by{ |sentence| sentence.length}
+one_third = sentences_sorted.length / 3
+ideal_sentences = sentences_sorted.slice(one_third, one_third + 1)
+ideal_sentences = ideal_sentences.select { |sentence| sentence =~ /is|are/
+}
+
+
 
 all_words = text.scan(/\w+/)
 stopwords = %q{the a by on for of are with just but and to the my in I has
@@ -32,4 +40,4 @@ puts "#{sentence_count} sentences"
 puts "#{sentences_per_paragraph} sentences per paragraph (average)"
 puts "#{words_per_sentence} words per sentence (average)"
 puts "#{good_percentage}% of words are non-fluff words"
-
+puts "Summary: \n\n" + ideal_sentences.join('. ')
